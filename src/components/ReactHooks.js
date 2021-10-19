@@ -11,7 +11,7 @@ export default function ReactHooks() {
         <>
             <h1>React Hooks</h1>
             <ol>
-                {houses.map(house => <li>
+                {houses.map((house) => <li>
                     {house}
                 </li>)}
             </ol>
