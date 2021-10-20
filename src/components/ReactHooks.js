@@ -4,20 +4,20 @@ export default function ReactHooks() {
     const [houses, setHouses] = useState(["Slytherin", "Gryffindore"])
 
     const [time, setTime] = useState(new Date())
-    // useEffect(() => {
-    //     setTimeout(() => {setTime(new Date())}, 400)
-    // }, [time])
+    useEffect(() => {
+        setTimeout(() => setTime(new Date()), 1000)
+    }, [time])
     return (
         <>
             <h1>React Hooks</h1>
             <ol>
-                {houses.map((house) => <li>
+                {houses.map((house) => <li key = {house}>
                     {house}
                 </li>)}
             </ol>
             <button
                 onClick = {() => {
-                    const x = houses
+                    const x = [...houses]
                     x.push("new house")
                     setHouses(x)
                 }}

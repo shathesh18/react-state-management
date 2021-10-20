@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import ReactDOM from "react-dom";
 
 // const name = "sathish"
@@ -7,13 +7,15 @@ import ReactDOM from "react-dom";
 // ReactDOM.render(element, document.getElementById('root'));
 
 export default function FunctionalComponent(props) {
-    let count = 0
+
+    const [count, setCount] = useState(0)
+    //let count = 0
     return (<div>
         <h1>Functional Component</h1>
         <div>
             <button 
                 onClick = {() => {
-                    count += 1
+                    setCount(count + 1)
                     console.log(count)
                 }}
             > 
@@ -21,7 +23,7 @@ export default function FunctionalComponent(props) {
             </button>
             <button 
                 onClick = {() => {
-                    count -= 1
+                    setCount(count - 1)
                     console.log(count)
                 }}
             >
